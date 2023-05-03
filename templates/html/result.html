@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/predict.css') }}"/>
+    <title>Result</title>
+</head>
+<body>
+    <header>
+        <h1>Pneumonia Detection using CNN</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="{{url_for('index')}}">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="{{url_for('login')}}">Login</a></li>
+          <li><a href="{{url_for('signup')}}">Signup</a></li>
+        </ul>
+      </nav>
+    <h2>Pneumonia Detection Result</h1>
+    {% if accuracy %}
+        <p class="content">{{ accuracy }}.</p>
+    {% else %}
+        <p class="content">Sorry, the prediction could not be made.</p>
+    {% endif %}
+        <div class="button-wrapper">
+    <button class="button-style" type="button"><a style="text-decoration: none;color:#eee" href="{{url_for('predict')}}">Try Another X-Ray</a></button>
+    <button class="button-style" type="button"><a style="text-decoration: none;color:#eee" href="{{url_for('logout')}}">Logout</a></button>
+        </div>
+</body>
+</html>

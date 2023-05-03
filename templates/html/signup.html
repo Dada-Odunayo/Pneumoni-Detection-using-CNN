@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/signup.css') }}"/>    
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>Pneumonia Detection using CNN</h1>
+          </header>
+          <nav>
+            <ul>
+              <li><a href="{{url_for('index')}}">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="{{url_for('login')}}">Login</a></li>
+              <li><a href="{{url_for('signup')}}">Signup</a></li>
+            </ul>
+          </nav>
+    <div class="signup">
+        <div class="login-section">
+        <h1 style="text-align:center;color:red;font-weight:900;font-family: 'Inter';font-size: 2 rem;">SIGN UP</h1>
+        <p style="text-align: center;">Note Passwords are case sensitive</p>
+        <form class="" method="POST" action="/signup" enctype="multipart/form-data">
+            {{form.csrf_token}}
+            {{form.hidden_tag()}}
+           <div class="form-item"> {{form.first_name}} </div>
+           <div class="form-item">{{form.last_name}}</div>
+           <div class="form-item"> {{form.email}}</div>
+           <div class="form-item"> {{form.password}}</div>
+           <div class="button-wrapper"> {{form.submit(class="button-style")}}</div>
+            <p style="text-align: center;">Already have an account? <a href="{{url_for('login')}}" style="color: red;text-decoration: none;">Log In</a></p>
+        </form>
+    </div>
+</div>
+</div>
+<script>
+    function validateForm() {
+        var firstName = document.getElementById("first_name").value;
+        var lastName = document.getElementById("last_name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm_password").value;
+    
+        if (firstName == "" || lastName == "" || email == "" || password == "" || confirmPassword == "") {
+            alert("Please fill in all fields.");
+            return false;
+        }
+    }
+    </script>
+</body>
+</html>

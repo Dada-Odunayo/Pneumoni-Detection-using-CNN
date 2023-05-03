@@ -1,0 +1,115 @@
+.page{
+    display: flex;
+    flex-direction: column;    
+    margin: 0px;
+    padding: 20px;
+    height: 800px;
+    justify-items: center; 
+    background-color: #eee;
+    background-image:linear-gradient( rgba(0,0,0,.2), rgba(0,0,0,.2) ), url('/static/images/bg2.jpg');
+   background-size: cover; 
+   background-position: center;
+    }
+    .upload{
+        align-items: center;
+        justify-content: center;
+    }
+    
+.head-section{
+    background-color: #ddd;    
+    align-self: center;
+}
+.form-section{
+    align-self: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+header {
+    background-color: #333;
+    color: red;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  nav {
+    background-color: #ddd;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+  }
+
+  nav li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    background-color: #ddd;
+  }
+
+  h2{
+    color: red;
+    text-align: center;
+  }
+
+  .button-style{
+    justify-content: center;
+  background-color: red; 
+  color: white; 
+  border: none;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1.2rem;
+  width: fit-content;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+ }
+ .button-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .content{
+    font-size: 1rem;
+    text-align: center;
+ }
+
+  @media only screen and (max-width: 600px) {
+    nav ul {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+  
+    nav li {
+      display: block;
+      margin: 0;
+    }
+  
+    nav a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      border-top: 1px solid ;
+    }}
+      

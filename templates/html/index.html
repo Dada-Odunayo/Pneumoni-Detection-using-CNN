@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection using CNN</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+  </head>
+  <body>
+    <header>
+      <h1>Pneumonia Detection using CNN</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="{{url_for('login')}}">Login</a></li>
+        <li><a href="{{url_for('signup')}}">Signup</a></li>
+      </ul>
+    </nav>
+    <main class="background-tint">
+      <h2 class="content-header">What is Pneumonia?</h2>
+      <p class="content-body">Pneumonia is an infection that inflames air sacs in one or both lungs, which may fill with fluid. It can range in severity from mild to life-threatening, and is especially dangerous for young children, elderly individuals, and those with weakened immune systems.</p>
+      <p class="content-body">Pneumonia is a serious respiratory infection that can lead to severe illness and even death, especially in vulnerable populations such as the elderly and those with weakened immune systems. Early detection and treatment of pneumonia is critical to improving patient outcomes, but traditional diagnostic methods such as chest X-rays and CT scans can be costly, time-consuming, and require specialized equipment and expertise.</p>
+
+      <p class="content-body">Fortunately, advances in artificial intelligence and machine learning have led to the development of new tools for detecting and diagnosing pneumonia more quickly and accurately. One such tool is the Convolutional Neural Network (CNN), a type of deep learning algorithm that is highly effective at image recognition tasks.</p>
+      
+      <h2 class="content-header">How does CNN help with Pneumonia Detection?</h2>
+
+      <p class="content-body">CNN (Convolutional Neural Network) is a type of artificial neural network that
+         is commonly used in image recognition and classification. 
+
+         CNNs are trained on large datasets of medical images, such as chest X-rays and CT scans, and can learn to recognize patterns 
+         and features that are indicative of pneumonia. When presented with a new image, a CNN can analyze it and make a determination
+          as to whether or not pneumonia is present, often with a high degree of accuracy.</p>
+
+       <p class="content-body"> One of the key advantages of using CNNs for pneumonia detection is that they can be highly efficient and cost-effective. Unlike traditional diagnostic methods that require specialized equipment and expertise, CNNs can be deployed on standard computer hardware and can analyze images in a matter of seconds. This makes it possible to rapidly screen large populations for pneumonia, which is especially important in the context of infectious disease outbreaks.</p>
+
+        <p class="content-body">In addition to their speed and accuracy, CNNs also have the potential to reduce human error and bias in the diagnosis of pneumonia. By relying on objective data and algorithms rather than subjective human judgment, CNNs can provide more consistent and reliable diagnoses, which can improve patient outcomes and reduce the overall cost of healthcare.</p>
+
+       <p class="content-body"> Overall, the use of CNNs for pneumonia detection represents an exciting advance in medical imaging and artificial intelligence. As research in this field continues, we can expect to see even more innovative and effective tools for detecting and diagnosing respiratory infections such as pneumonia, which has the potential to improve public health and save lives.</p>
+    </main>
+    <footer>
+      <p>&copy; 2023 Pneumonia Detection using CNN</p>
+    </footer>
+  </body>
+</html>
