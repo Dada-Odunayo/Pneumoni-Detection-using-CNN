@@ -10,9 +10,8 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, log
 from flask_bcrypt import Bcrypt
 from wtforms import StringField, PasswordField, EmailField,SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
-import tflite_runtime.interpreter as tf
+import tensorflow as tf
 #from tensorflow.keras.preprocessing.image import img_to_array
-#import importlib
 
 # Load the trained model
 interpreter = tf.lite.Interpreter(model_path='model2.tflite')
