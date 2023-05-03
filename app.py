@@ -11,7 +11,7 @@ from flask_bcrypt import Bcrypt
 from wtforms import StringField, PasswordField, EmailField,SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 import tensorflow as tf
-#from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import img_to_array
 
 # Load the trained model
 interpreter = tf.lite.Interpreter(model_path='model2.tflite')
@@ -108,7 +108,8 @@ def login():
                 login_user(user)
                 return redirect(url_for('predict'))
     return render_template('html/login.html',form = form)
-@app.route('/signup')
+
+@app.route('/signup', methods=['GET','POST'])
 def signup():
     form = RegistrationForm()
     print('form created')
