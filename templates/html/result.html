@@ -18,11 +18,12 @@
         </ul>
       </nav>
     <h2>Pneumonia Detection Result</h1>
-    {% if accuracy %}
-        <p class="content">{{ accuracy }}.</p>
-    {% else %}
-        <p class="content">Sorry, the prediction could not be made.</p>
-    {% endif %}
+    <!--{% if accuracy %}-->
+        <p class="content">The patient's X-Ray is classified as {{ label }}.</p>
+        <p class="content">The degree of likelihood is {{ accuracy }}%</p>
+    <!--{% else %}-->
+        <!--<p class="content">Sorry, the prediction could not be made.</p>-->
+    <!--{% endif %}-->
         <div class="button-wrapper">
     <button class="button-style" type="button"><a style="text-decoration: none;color:#eee" href="{{url_for('predict')}}">Try Another X-Ray</a></button>
     <button class="button-style" type="button"><a style="text-decoration: none;color:#eee" href="{{url_for('logout')}}">Logout</a></button>
