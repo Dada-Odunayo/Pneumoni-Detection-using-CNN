@@ -1,8 +1,14 @@
 body {
    margin: 0;
-   padding: 0;
-   font-family: Arial, sans-serif;
-     
+   padding: 0; 
+ }
+ .flash{
+  color: red;
+  text-align: center;
+ }
+ .links{
+  color: red; 
+  text-decoration: none
  }
 .page{
     display: flex;
@@ -12,7 +18,7 @@ body {
     height: 800px;
     justify-items: center; 
     background-color: #eee;
-    background-image:linear-gradient( rgba(0,0,0,.2), rgba(0,0,0,.2) ), url('/static/images/bg2.jpg');
+    background-image:linear-gradient( rgba(0,0,0,0), rgba(0,0,0,0) ), url('/static/images/bg2.jpg'); 
    background-size: cover; 
    background-position: center;
     }

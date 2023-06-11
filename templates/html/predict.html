@@ -1,69 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Predict</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/predict.css') }}"/>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/predict.css') }}"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Pneumonia Detection using CNN</h1>
-      </header>
-      <nav>
-        <ul>
-          <li><a href="{{url_for('index')}}">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="{{url_for('login')}}">Login</a></li>
-          <li><a href="{{url_for('signup')}}">Signup</a></li>
-        </ul>
-      </nav>
+      <h1>Pneumonia Detection using CNN</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('login')}}">Login</a></li>
+        <li><a href="{{url_for('signup')}}">Signup</a></li>
+      </ul>
+    </nav>
     <div class="page">
-        
-        
-            <div class="form-section">
-                <form method="POST" action="/predict" enctype="multipart/form-data">
-
-                    <h2>Upload Image</h2>
-                    <div class="form-item">
-                        <input type="file" name="image" id="image" onchange="loadFile(event)"/>
-                    </div>
-                    <img id="output" width="200"/>
-                    <p id="err" style="color: red;text-align: center;"></p>
-                    <div class="button-wrapper">
-                        <button class="button-style" id="predict" type="submit" class="button-style">Predict</button>
-                    </div>
-                </form>
-                {% if prediction %}
-                <div class="prediction-section">
-                    <h2>Prediction:</h2>
-                    {% if prediction == 'NORMAL' %}
-                    <p class="normal">{{ prediction }}</p>
-                    {% else %}
-                    <p class="pneumonia">{{ prediction }}</p>
-                    {% endif %}
-                    <img src="{{ image }}" alt="X-Ray">
-                </div>
-                {% endif %}
+      <div class="form-section">
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+          <h2>Upload Image</h2>
+          <div class="form-item">
+            <input
+              type="file"
+              name="image"
+              id="image"
+              onchange="loadFile(event)"
+            />
+          </div>
+          <img id="output" width="200" />
+          <p id="err" style="color: red; text-align: center"></p>
+          <div class="button-wrapper">
+            <button
+              class="button-style"
+              id="predict"
+              type="submit"
+              class="button-style"
+            >
+              Predict
+            </button>
+          </div>
+        </form>
+        {% if prediction %}
+        <div class="prediction-section">
+          <h2>Prediction:</h2>
+          {% if prediction == 'NORMAL' %}
+          <p class="normal">{{ prediction }}</p>
+          {% else %}
+          <p class="pneumonia">{{ prediction }}</p>
+          {% endif %}
+          <img src="{{ image }}" alt="X-Ray" />
         </div>
-    
+        {% endif %}
+      </div>
     </div>
     <script>
-        var imageInput = document.getElementById('image');
-  var submitButton = document.getElementById('predict');
+      var imageInput = document.getElementById("image");
+      var submitButton = document.getElementById("predict");
 
-  submitButton.addEventListener('click', function(event) {
-    if (imageInput.value == '') {
-      document.getElementById('err').innerHTML = "Please Select Image";
-      event.preventDefault();
-    }
-  });
+      submitButton.addEventListener("click", function (event) {
+        if (imageInput.value == "") {
+          document.getElementById("err").innerHTML = "Please Select Image";
+          event.preventDefault();
+        }
+      });
 
-  var loadFile = function(event) {
-    var image = document.getElementById('output');
-    image.src = URL.createObjectURL(event.target.files[0]);
-  };
-       
+      var loadFile = function (event) {
+        var image = document.getElementById("output");
+        image.src = URL.createObjectURL(event.target.files[0]);
+      };
     </script>
-
-</body>
+  </body>
 </html>

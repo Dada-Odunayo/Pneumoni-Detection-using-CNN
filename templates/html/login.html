@@ -1,49 +1,72 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}" type="text/css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/login.css') }}"
+      type="text/css"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Pneumonia Detection using CNN</h1>
-      </header>
-      <nav>
-        <ul>
-          <li><a href="{{url_for('index')}}">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="{{url_for('login')}}">Login</a></li>
-          <li><a href="{{url_for('signup')}}">Signup</a></li>
-        </ul>
-      </nav>
+      <h1>Pneumonia Detection using CNN</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('login')}}">Login</a></li>
+        <li><a href="{{url_for('signup')}}">Signup</a></li>
+      </ul>
+    </nav>
     <div class="page">
-        <div class="login-section">
-            <div >
-            <h1 style="color: red;font-size: 2rem;text-align: center;">LOG IN</h1>
-            <form  method="POST" action="/login">
-                {{form.hidden_tag()}}
-               <div class="form-item"> {{form.email}}</div>
-               <div class="form-item"> {{form.password}}</div>
-                <div class="button-wrapper">{{form.submit(class="button-style")}} </div>
-                <p style="text-align: center;" >Don't have an account? <a style="color: red;text-decoration: none;" href="{{url_for('signup')}}">Register</a></p>
-            </form>
+      <div class="login-section">
+        <div>
+          <h1 style="color: red; font-size: 2rem; text-align: center">
+            LOG IN
+          </h1>
+          <form method="POST" action="/login">
+            {{form.hidden_tag()}} {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <p class="flash">{{ messages[0] }}</p>
+            {% endif %} {% endwith %}
+            <div class="form-item">{{form.email}}</div>
+            <div class="form-item">{{form.password}}</div>
+            <p>
+              Forgot your password?
+              <a
+                style="color: red; text-decoration: none"
+                href="{{ url_for('forgot_password') }}"
+                >Reset it here</a
+              >
+            </p>
+            <div class="button-wrapper">
+              {{form.submit(class="button-style")}}
+            </div>
+            <p style="text-align: center">
+              Don't have an account?
+              <a
+                style="color: red; text-decoration: none"
+                href="{{url_for('signup')}}"
+                >Register</a
+              >
+            </p>
+          </form>
         </div>
-    </div>
+      </div>
     </div>
     <script>
-        function validateForm() {
-            var userName = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-         
-        
-            if (userName == "" || password == "" ) {
-                alert("Please fill in all fields.");
-                return false;
-            }
+      function validateForm() {
+        var userName = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (userName == "" || password == "") {
+          alert("Please fill in all fields.");
+          return false;
         }
-        </script>
-</body>
+      }
+    </script>
+  </body>
 </html>
